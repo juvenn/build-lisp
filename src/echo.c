@@ -2,25 +2,13 @@
 #include <stdlib.h> // free
 
 #ifdef _WIN32
-// on Win where ther's no readline
+
 #include <string.h>
-
-char* readline(char* prompt) {
-  char input[2048];
-  fputs(prompt, stdout);
-  fgets(input, 2048, stdin);
-  char* buffer = malloc(strlen(input) + 1);
-  strcpy(buffer, input);
-  buffer[strlen(input)-1] = '\0';
-  return buffer;
-}
-
-void add_history(char* input) {}
+#include "win.h"
 
 #else
-// on *nix
-#include <editline/readline.h>
 
+#include <editline/readline.h>
 #if defined __unix__
   // only necessary on unix
   #include <editline/history.h>
