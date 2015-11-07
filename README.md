@@ -1,4 +1,4 @@
-Lisp in C
+Build Lisp in C
 ====
 
 http://www.buildyourownlisp.com/
